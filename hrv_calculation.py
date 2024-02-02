@@ -1,6 +1,5 @@
 
 import sys
-from utils.s3 import S3
 from numpy import ndarray
 from matplotlib.figure import Figure
 from scipy.interpolate import CubicSpline
@@ -12,17 +11,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-SMALL_SIZE = 14
-MEDIUM_SIZE = 18
-BIGGER_SIZE = 22
-
-plt.rc('font', size=SMALL_SIZE)  # controls default text sizes
-plt.rc('axes', titlesize=BIGGER_SIZE)  # fontsize of the axes title
-plt.rc('axes', labelsize=MEDIUM_SIZE)  # fontsize of the x and y labels
-plt.rc('xtick', labelsize=SMALL_SIZE)  # fontsize of the tick labels
-plt.rc('ytick', labelsize=SMALL_SIZE)  # fontsize of the tick labels
-plt.rc('legend', fontsize=SMALL_SIZE)  # legend fontsize
-plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
 fd_cols = ['P_VLF (s^2/Hz)', 'P_LF (s^2/Hz)', 'P_HF (s^2/Hz)', 'P_VLF (%)', 'P_LF (%)', 
            'P_HF (%)', 'pf_VLF (Hz)', 'pf_LF (Hz)', 'pf_HF (Hz)', 'LF/HF']
 td_cols = ['SDNN (ms)', 'SDANN (ms)', 'MeanRR (ms)', 'RMSSD (ms)', 'pNN50 (%)']
@@ -31,18 +19,9 @@ nl_cols = ['REC (%)', 'DET (%)', 'LAM (%)', 'Lmean (bts)', 'Lmax (bts)',
 
 
 class hrvlib:
-    """
-    HRV Library
-    """
 
     def calctimedomainhrv(RRI, t_unit='ms', decim: int = 2):
-        """
-        This function estimates HRV features in the time-domain from a given RRI series.
-        :param rri: RR interval series.
-        :param t_unit: Time unit of input RRI series. Default is milliseconds (ms). Note this does not impact the output units. Output units are fixed.
-        :param int decim: Optional. The number of decimal places in results.
-        :return: SDNN, SDANN, Mean RRI, RMSSD, pNN50
-        """
+
         rri = RRI[~np.isnan(RRI)]
         if t_unit == 's':
             rri *= 1e3
