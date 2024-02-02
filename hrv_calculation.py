@@ -19,10 +19,10 @@ nl_cols = ['REC (%)', 'DET (%)', 'LAM (%)', 'Lmean (bts)', 'Lmax (bts)',
            'Vmean (bts)', 'Vmax (bts)', 'SD1', 'SD2', 'alpha1', 'alpha2']
 
 
-class hrvlib:
+class hrv:
 
 
-    def calctimedomainhrv(RRI, t_unit='ms', decim: int = 2):
+    def timedomainhrv(RRI, t_unit='ms', decim: int = 2):
 
         rri = RRI[~np.isnan(RRI)]
         if t_unit == 's':
@@ -66,7 +66,7 @@ class hrvlib:
 
     # Freq_Analysis
 
-    def calcfreqdomainhrv(RRI, t_unit='ms', meth=1, decim=3, M=5, O=50, BTval=10, omega_max=500, order=100):
+    def freqdomainhrv(RRI, t_unit='ms', meth=1, decim=3, M=5, O=50, BTval=10, omega_max=500, order=100):
 
         rri = RRI[~np.isnan(RRI)]
         
@@ -118,7 +118,7 @@ class hrvlib:
         return pd.DataFrame([[powVLF, powLF, powHF, perpowVLF, perpowLF, perpowHF,
                               peak_freq_VLF, peak_freq_LF, peak_freq_HF, LFHF]], columns=fd_cols)
 
-    def calcnonlinearhrv(self, RRI, t_unit='ms', m=10, L=1, min_box=4, max_box=64, inc=1, cop=12, decim=2):
+    def nonlinearhrv(self, RRI, t_unit='ms', m=10, L=1, min_box=4, max_box=64, inc=1, cop=12, decim=2):
         
         rri = RRI[~np.isnan(RRI)]
         
