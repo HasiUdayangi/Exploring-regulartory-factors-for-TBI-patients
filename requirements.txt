@@ -1,0 +1,15 @@
+numpy
+pandas
+matplotlib
+scipy
+boto3
+scikit-learn
+plotly
+seaborn
+networkx
+torch
+torch-geometric
+node2vec
+ipython
+pyvis
+python-louvain
