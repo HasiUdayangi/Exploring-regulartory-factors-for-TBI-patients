@@ -31,14 +31,14 @@ class VitalSignExtractor:
 
     def all_vital_extract(self, patient_ids, parameter_ids, admission_date):
         column_mapping = {
-            3885: 'HR',
-            3888: 'Diastolic BP',
-            3887: 'Systolic BP',
-            5436: 'ABP Mean',
-            3951: 'SpO2',
-            4083: 'Respiratory rate',
-            3976: 'Temperature',
-            3910: 'Intra-Cranial Pressure'
+            ####: 'HR',
+            ####: 'Diastolic BP',
+            ####: 'Systolic BP',
+            ####: 'ABP Mean',
+            ####: 'SpO2',
+            ####: 'Respiratory rate',
+            ####: 'Temperature',
+            ####: 'Intra-Cranial Pressure'
         }
 
 
@@ -67,27 +67,27 @@ class VitalSignExtractor:
     
     def all_ABG_extract(self, patient_ids, parameter_ids, admission_date):
         column_mapping = {
-            8919: 'PaCo2',
-            11424: 'Potassium',
-            15166: 'Total Hb',
-            13053: 'Oxy Haemoglobin',
-            13054: 'Oxygen Saturation',
-            12347: 'Methaemoglobin',
-            8465: 'Carboxyhaemoglobin',
-            13670: 'PaO2',
-            8523: 'pH',
-            15825: 'Chloride',
-            12756: 'Sodium',
-            15824: 'Glucose',
-            7960: 'Calcium (Ionised)',
-            8527: 'pO2',
-            13188: 'ABG p50',
-            27391: 'Specimen Type',
-            10654: 'ABG Bicarbonate',
-            11763: 'ABG Lactate',
-            3997: 'Pulmonary Artery Pressure Mean',
-            7676: 'ABG Base Excess',
-            6904: 'ABG Anion Gap'
+            ####: 'PaCo2',
+            ####: 'Potassium',
+            ####: 'Total Hb',
+            ####: 'Oxy Haemoglobin',
+            ####: 'Oxygen Saturation',
+            ####: 'Methaemoglobin',
+            ####: 'Carboxyhaemoglobin',
+            ####: 'PaO2',
+            ####: 'pH',
+            ####: 'Chloride',
+            ####: 'Sodium',
+            ####: 'Glucose',
+            ####: 'Calcium (Ionised)',
+            ####: 'pO2',
+            ####: 'ABG p50',
+            ####: 'Specimen Type',
+            ####: 'ABG Bicarbonate',
+            ####: 'ABG Lactate',
+            ####: 'Pulmonary Artery Pressure Mean',
+            ####: 'ABG Base Excess',
+            ####: 'ABG Anion Gap'
         }
 
 
