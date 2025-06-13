@@ -9,9 +9,7 @@ import pandas as pd
 import boto3
 import sys
 import numpy as np
-sys.path.append("/home/ec2-user/SageMaker")
-sys.path.append("/home/ec2-user/SageMaker/utils/patient_viewer/")
-sys.path.append("/home/ec2-user/SageMaker/relationship between HRV and others/Vital sign feature/")
+
 from utils.waveform_viewer2 import Waveform_Helper
 from utils import Athena_Query
 from utils import S3, LabelStore
@@ -19,8 +17,6 @@ from utils.waveform_viewer2 import Waveform_Chart
 from utils.waveform_viewer2 import Waveform_Extract, Waveform_Helper
 import datetime
 from datetime import datetime, timedelta, date
-wh = Waveform_Helper()
-athena = Athena_Query()
 from vital_sign_extraction import VitalSignExtractor
 vital = VitalSignExtractor()
 
