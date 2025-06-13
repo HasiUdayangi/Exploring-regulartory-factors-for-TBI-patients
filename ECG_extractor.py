@@ -16,12 +16,7 @@ from utils.sql_query import SqlQuery
 from IPython.display import clear_output, HTML
 import heartpy as hp
 from scipy.interpolate import CubicSpline
-from utils.waveform_viewer2 import Waveform_Extract, Waveform_Helper
 
-
-
-# Initialize helper instances
-wh = Waveform_Helper()
 athena = Athena_Query()
 
 
@@ -88,9 +83,9 @@ if __name__ == "__main__":
     #     clear_output(wait=True)
     
     # Example usage of the extract_12hr_ecg function
-    patientid_example = 'CF58B01B461990C047667C34D9EE190F'
-    start_time = '2022-07-21 06:47:00'
-    end_time = '2022-07-21 18:47:00'
+    patientid_example = ''
+    start_time = ''
+    end_time = ''
     df_ecg = extract_12hr_ecg(patientid_example, start_time, end_time)
     
     if df_ecg is not None:
